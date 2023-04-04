@@ -13,8 +13,18 @@ export const Content = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 40px;
   max-width: 384px;
   width: 100%;
+`
+
+export const Header = styled.header`
+  text-align: center;
+
+  p {
+    line-height: 150%;
+    margin-bottom: 4px;
+  }
 `
 
 export const Form = styled.form`
