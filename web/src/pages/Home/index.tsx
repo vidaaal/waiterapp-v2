@@ -1,5 +1,7 @@
 import { HouseSimple } from 'phosphor-react'
 import { Header } from '../../components/Header'
+import { OrdersBoard } from './components/OrdersBoard'
+import { Container } from './styles'
 
 export function Home() {
   return (
@@ -10,7 +12,31 @@ export function Home() {
         description="Acompanhe os pedidos dos clientes"
       />
 
-      <p>home</p>
+      <Container>
+        <OrdersBoard
+          icon="🕑"
+          title="Fila de espera"
+          // orders={waitingOrders}
+          // onCancelOrder={handleCancelOrder}
+          // onChangeOrderStatus={handleOrderStatusChange}
+        />
+
+        <OrdersBoard
+          icon="👩‍🍳"
+          title="Fila de espera"
+          // orders={inProductionOrders}
+          // onCancelOrder={handleCancelOrder}
+          // onChangeOrderStatus={handleOrderStatusChange}
+        />
+
+        <OrdersBoard
+          icon="✅"
+          title="Pronto!"
+          // orders={doneOrders}
+          // onCancelOrder={handleCancelOrder}
+          // onChangeOrderStatus={handleOrderStatusChange}
+        />
+      </Container>
     </>
   )
 }
