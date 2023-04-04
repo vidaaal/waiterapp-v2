@@ -40,4 +40,9 @@ export const SignOut = styled.button`
     line-height: 140%;
     font-weight: 500;
   }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 `

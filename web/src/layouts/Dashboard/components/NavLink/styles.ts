@@ -16,6 +16,11 @@ export const StyledNavLink = styled(NavLink)`
     font-weight: 500;
   }
 
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
   &.active {
     color: ${({ theme }) => theme.colors.brand.red};
 

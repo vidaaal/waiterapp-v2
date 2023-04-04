@@ -9,40 +9,17 @@ export function SideBar() {
       <img src={miniLogo} alt="WA" />
 
       <Paths>
-        <SidebarNavLink
-          icon={<HouseSimple size={24} />}
-          name="Home"
-          path="/home"
-        />
-
-        <SidebarNavLink
-          icon={<Files size={24} />}
-          name="Histórico"
-          path="/orders"
-        />
-
-        <SidebarNavLink
-          icon={<Scroll size={24} />}
-          name="Cardápio"
-          path="/menu"
-        />
-
-        <SidebarNavLink
-          icon={<Users size={24} />}
-          name="Usuários"
-          path="/users"
-        />
+        <SidebarNavLink icon={<HouseSimple />} name="Home" path="/home" />
+        <SidebarNavLink icon={<Files />} name="Histórico" path="/orders" />
+        <SidebarNavLink icon={<Scroll />} name="Cardápio" path="/menu" />
+        <SidebarNavLink icon={<Users />} name="Usuários" path="/users" />
       </Paths>
 
       <BottomActions>
-        <SidebarNavLink
-          icon={<User size={24} />}
-          name="Meu perfil"
-          path="/me"
-        />
+        <SidebarNavLink icon={<User />} name="Meu perfil" path="/me" />
 
         <SignOut>
-          <Power size={24} />
+          <Power />
 
           <span>Sair</span>
         </SignOut>
