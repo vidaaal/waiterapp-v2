@@ -12,12 +12,16 @@ export const TextLabel = styled.small`
 export const Content = styled.div`
   width: 100%;
   height: 100%;
-  position: relative;
   margin-top: 8px;
+  display: flex;
+  align-items: center;
+  border: 1px solid ${({ theme }) => theme.colors.gray[200]};
+  border-radius: 8px;
 
   &:has(input:focus) {
+    border: 1px solid ${({ theme }) => theme.colors.gray[400]};
+
     input {
-      border: 1px solid ${({ theme }) => theme.colors.gray[400]};
       color: ${({ theme }) => theme.colors.gray[400]};
     }
 
@@ -35,12 +39,12 @@ export const RawInput = styled.input<RawInputProps>`
   width: 100%;
   height: 100%;
   padding: 16px;
-  border-radius: 8px;
   background: ${({ theme }) => theme.colors.gray[100]};
   color: ${({ theme }) => theme.colors.gray[400]};
-  border: 1px solid ${({ theme }) => theme.colors.gray[200]};
   font-size: 0.875rem;
   outline: 0;
+  border: 0;
+  border-radius: 8px;
 
   ::placeholder {
     font-size: 0.875rem;
@@ -56,11 +60,8 @@ export const RawInput = styled.input<RawInputProps>`
 export const RightIcon = styled.button`
   all: unset;
   line-height: 0;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
   cursor: pointer;
+  margin-right: 16px;
 
   svg {
     color: ${({ theme }) => theme.colors.gray[300]};
