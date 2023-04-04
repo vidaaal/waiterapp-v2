@@ -21,12 +21,12 @@ export function Login() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<LoginFormFields>({
     resolver: zodResolver(loginFormSchema),
   })
 
-  function handleLogin(data: LoginFormFields) {
+  async function handleLogin(data: LoginFormFields) {
     console.log(data)
   }
 
@@ -58,7 +58,9 @@ export function Login() {
             />
           </Fields>
 
-          <Button type="submit">Fazer Login</Button>
+          <Button type="submit" isLoading={isSubmitting}>
+            Fazer Login
+          </Button>
         </Form>
       </Content>
     </Container>
