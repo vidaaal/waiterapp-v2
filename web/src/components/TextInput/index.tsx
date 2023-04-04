@@ -35,9 +35,8 @@ const TextInputBase: ForwardRefRenderFunction<
     <Container>
       <TextLabel>{label}</TextLabel>
 
-      <Content>
+      <Content error={!!errorMessage}>
         <RawInput
-          error={!!errorMessage}
           {...rest}
           ref={ref}
           type={type === 'password' && isPasswordVisible ? 'text' : type}

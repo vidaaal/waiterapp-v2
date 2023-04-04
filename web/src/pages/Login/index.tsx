@@ -12,7 +12,7 @@ const loginFormSchema = z.object({
   email: z.string().email({ message: 'Formato de e-mail inválido.' }),
   password: z
     .string()
-    .min(6, { message: 'Senha deve ter pelo menos 6 caracteres' }),
+    .min(6, { message: 'Senha deve ter pelo menos 6 caracteres.' }),
 })
 
 type LoginFormFields = z.infer<typeof loginFormSchema>

@@ -9,7 +9,11 @@ export const TextLabel = styled.small`
   font-size: 0.875rem;
 `
 
-export const Content = styled.div`
+interface ContentProps {
+  error: boolean
+}
+
+export const Content = styled.div<ContentProps>`
   width: 100%;
   height: 100%;
   margin-top: 8px;
@@ -29,13 +33,15 @@ export const Content = styled.div`
       color: ${({ theme }) => theme.colors.gray[400]};
     }
   }
+
+  ${({ error }) =>
+    error &&
+    css`
+      border: 1px solid ${({ theme }) => theme.colors.brand.red} !important;
+    `}
 `
 
-interface RawInputProps {
-  error: boolean
-}
-
-export const RawInput = styled.input<RawInputProps>`
+export const RawInput = styled.input`
   width: 100%;
   height: 100%;
   padding: 16px;
@@ -49,12 +55,6 @@ export const RawInput = styled.input<RawInputProps>`
   ::placeholder {
     font-size: 0.875rem;
   }
-
-  ${({ error }) =>
-    error &&
-    css`
-      border: 1px solid ${({ theme }) => theme.colors.brand.red} !important;
-    `}
 `
 
 export const RightIcon = styled.button`
