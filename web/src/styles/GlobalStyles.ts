@@ -46,7 +46,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: GeneralSans, sans-serif;
   }
 
-  body: {
+  body {
     background: ${({ theme }) => theme.colors.gray[100]};
     color: ${({ theme }) => theme.colors.gray[500]};
   }
