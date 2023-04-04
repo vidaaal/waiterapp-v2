@@ -12,4 +12,9 @@ export const StyledButton = styled.button`
   color: ${({ theme }) => theme.colors.white};
   font-size: 1rem;
   font-weight: 600;
+
+  &:disabled {
+    background: ${({ theme }) => theme.colors.gray[200]};
+    cursor: not-allowed;
+  }
 `
