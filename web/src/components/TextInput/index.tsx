@@ -1,5 +1,10 @@
 import { Eye, EyeSlash, WarningCircle } from 'phosphor-react'
-import { InputHTMLAttributes, useState } from 'react'
+import {
+  forwardRef,
+  ForwardRefRenderFunction,
+  InputHTMLAttributes,
+  useState,
+} from 'react'
 import {
   Container,
   Content,
@@ -14,7 +19,10 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string
 }
 
-export function TextInput({ label, errorMessage, ...rest }: TextInputProps) {
+const TextInputBase: ForwardRefRenderFunction<
+  HTMLInputElement,
+  TextInputProps
+> = ({ label, errorMessage, ...rest }, ref) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
   const { type } = { ...rest }
@@ -31,6 +39,7 @@ export function TextInput({ label, errorMessage, ...rest }: TextInputProps) {
         <RawInput
           error={!!errorMessage}
           {...rest}
+          ref={ref}
           type={type === 'password' && isPasswordVisible ? 'text' : type}
         />
 
@@ -55,3 +64,5 @@ export function TextInput({ label, errorMessage, ...rest }: TextInputProps) {
     </Container>
   )
 }
+
+export const TextInput = forwardRef(TextInputBase)
