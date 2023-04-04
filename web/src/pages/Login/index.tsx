@@ -1,3 +1,13 @@
+import { Container, Content, Fields, Form } from './styles'
+
 export function Login() {
-  return <h1>Login Page</h1>
+  return (
+    <Container>
+      <Content>
+        <Form>
+          <Fields></Fields>
+        </Form>
+      </Content>
+    </Container>
+  )
 }
