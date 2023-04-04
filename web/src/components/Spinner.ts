@@ -28,9 +28,13 @@ const prixClipFix = keyframes`
   }
 `
 
-export const Spinner = styled.span`
-  width: 48px;
-  height: 48px;
+interface SpinnerProps {
+  size?: number
+}
+
+export const Spinner = styled.span<SpinnerProps>`
+  width: ${({ size }) => `${size}px` ?? `32px`};
+  height: ${({ size }) => `${size}px` ?? `32px`};
   border-radius: 50%;
   position: relative;
   animation: ${rotate} 1s linear infinite;
@@ -41,13 +45,7 @@ export const Spinner = styled.span`
     position: absolute;
     inset: 0px;
     border-radius: 50%;
-    border: 5px solid #fff;
+    border: 2px solid ${({ theme }) => theme.colors.white};
     animation: ${prixClipFix} 2s linear infinite;
-  }
-
-  @keyframes rotate {
-  }
-
-  @keyframes prixClipFix {
   }
 `
