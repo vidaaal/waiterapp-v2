@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+export const HomeHeader = styled.div``
+
 export const Container = styled.div`
   max-width: 1216px;
   width: 100%;

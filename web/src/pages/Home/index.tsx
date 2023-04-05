@@ -1,16 +1,18 @@
 import { HouseSimple } from 'phosphor-react'
 import { Header } from '../../components/Header'
 import { OrdersBoard } from './components/OrdersBoard'
-import { Container } from './styles'
+import { Container, HomeHeader } from './styles'
 
 export function Home() {
   return (
     <>
-      <Header
-        icon={<HouseSimple />}
-        title="Home"
-        description="Acompanhe os pedidos dos clientes"
-      />
+      <HomeHeader>
+        <Header
+          icon={<HouseSimple />}
+          title="Home"
+          description="Acompanhe os pedidos dos clientes"
+        />
+      </HomeHeader>
 
       <Container>
         <OrdersBoard
