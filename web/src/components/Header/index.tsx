@@ -9,7 +9,7 @@ interface HeaderProps {
 
 export function Header({ title, description, icon }: HeaderProps) {
   return (
-    <>
+    <div>
       <Title>
         {icon}
 
@@ -19,6 +19,6 @@ export function Header({ title, description, icon }: HeaderProps) {
       <Description>
         <p>{description}</p>
       </Description>
-    </>
+    </div>
   )
 }

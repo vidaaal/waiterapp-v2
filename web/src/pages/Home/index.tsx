@@ -1,20 +1,26 @@
-import { HouseSimple } from 'phosphor-react'
+import { ArrowsCounterClockwise, HouseSimple } from 'phosphor-react'
+import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { OrdersBoard } from './components/OrdersBoard'
-import { Container, HomeHeader } from './styles'
+import { Container, HomeHeader, Kanbam } from './styles'
 
 export function Home() {
   return (
-    <>
+    <Container>
       <HomeHeader>
         <Header
           icon={<HouseSimple />}
           title="Home"
           description="Acompanhe os pedidos dos clientes"
         />
+
+        <Button variant="secondary">
+          <ArrowsCounterClockwise size={24} />
+          Reiniciar o dia
+        </Button>
       </HomeHeader>
 
-      <Container>
+      <Kanbam>
         <OrdersBoard
           icon="🕑"
           title="Fila de espera"
@@ -38,7 +44,7 @@ export function Home() {
           // onCancelOrder={handleCancelOrder}
           // onChangeOrderStatus={handleOrderStatusChange}
         />
-      </Container>
-    </>
+      </Kanbam>
+    </Container>
   )
 }

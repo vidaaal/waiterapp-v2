@@ -28,6 +28,10 @@ const buttonVariants = {
 
     &:not(:disabled):hover {
       color: ${({ theme }) => theme.colors.brand.redDark};
+
+      svg {
+        color: ${({ theme }) => theme.colors.brand.redDark};
+      }
     }
   `,
 }
