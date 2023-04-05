@@ -8,6 +8,7 @@ const buttonVariants = {
   primary: css`
     background: ${({ theme }) => theme.colors.brand.red};
     color: ${({ theme }) => theme.colors.white};
+    padding: 14px 28px;
 
     &:disabled {
       background: ${({ theme }) => theme.colors.gray[200]};
@@ -21,6 +22,7 @@ const buttonVariants = {
     width: fit-content;
     background: transparent;
     color: ${({ theme }) => theme.colors.brand.red};
+    padding: 14px 0;
 
     &:disabled {
       color: ${({ theme }) => theme.colors.gray[300]};
@@ -43,12 +45,12 @@ export const StyledButton = styled.button<StyledButtonProps>`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 16px;
   border-radius: 44px;
   border: 0;
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s;
+  white-space: nowrap;
 
   &:disabled {
     cursor: not-allowed;

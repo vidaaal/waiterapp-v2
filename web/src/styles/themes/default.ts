@@ -12,6 +12,7 @@ export const defaultTheme = {
       200: '#CCCCCC',
       100: '#FAFAFA',
     },
-    white: '#FFF',
+    white: '#FFFFFF',
+    black: '#000000',
   },
 } as const
