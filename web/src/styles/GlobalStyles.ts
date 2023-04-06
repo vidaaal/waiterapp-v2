@@ -55,6 +55,10 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
+  button, input {
+    outline: 0;
+  }
+
   a {
     text-decoration: none;
   }

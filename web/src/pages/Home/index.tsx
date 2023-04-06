@@ -1,8 +1,10 @@
 import { ArrowsCounterClockwise, HouseSimple } from 'phosphor-react'
+import { useState } from 'react'
 import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Order } from '../../types/Order'
 import { OrdersBoard } from './components/OrdersBoard'
+import { ResetDayModal } from './components/ResetDayModal'
 import { Container, HomeHeader, Kanbam } from './styles'
 
 const ordersMock: Order[] = [
@@ -13,7 +15,7 @@ const ordersMock: Order[] = [
     products: [
       {
         id: '1232',
-        quantity: 12,
+        quantity: 2,
         product: {
           name: 'Pizza',
           imagePath:
@@ -90,6 +92,12 @@ const ordersMock: Order[] = [
 ]
 
 export function Home() {
+  const [isResetDayModalOpen, setIsResetDayModalOpen] = useState(false)
+
+  function handleOpenResetDayModal() {
+    setIsResetDayModalOpen(true)
+  }
+
   const waitingOrders = ordersMock.filter((order) => order.status === 'WAITING')
   const inProductionOrders = ordersMock.filter(
     (order) => order.status === 'IN_PRODUCTION',
@@ -97,31 +105,42 @@ export function Home() {
   const doneOrders = ordersMock.filter((order) => order.status === 'DONE')
 
   return (
-    <Container>
-      <HomeHeader>
-        <Header
-          icon={<HouseSimple />}
-          title="Home"
-          description="Acompanhe os pedidos dos clientes"
-        />
+    <>
+      <Container>
+        <HomeHeader>
+          <Header
+            icon={<HouseSimple />}
+            title="Home"
+            description="Acompanhe os pedidos dos clientes"
+          />
 
-        <Button variant="secondary">
-          <ArrowsCounterClockwise size={24} />
-          Reiniciar o dia
-        </Button>
-      </HomeHeader>
+          <Button variant="secondary" onClick={handleOpenResetDayModal}>
+            <ArrowsCounterClockwise size={24} />
+            Reiniciar o dia
+          </Button>
+        </HomeHeader>
 
-      <Kanbam>
-        <OrdersBoard icon="🕑" title="Fila de espera" orders={waitingOrders} />
+        <Kanbam>
+          <OrdersBoard
+            icon="🕑"
+            title="Fila de espera"
+            orders={waitingOrders}
+          />
 
-        <OrdersBoard
-          icon="👩‍🍳"
-          title="Fila de espera"
-          orders={inProductionOrders}
-        />
+          <OrdersBoard
+            icon="👩‍🍳"
+            title="Fila de espera"
+            orders={inProductionOrders}
+          />
 
-        <OrdersBoard icon="✅" title="Pronto!" orders={doneOrders} />
-      </Kanbam>
-    </Container>
+          <OrdersBoard icon="✅" title="Pronto!" orders={doneOrders} />
+        </Kanbam>
+      </Container>
+
+      <ResetDayModal
+        isOpen={isResetDayModalOpen}
+        onOpenChange={setIsResetDayModalOpen}
+      />
+    </>
   )
 }

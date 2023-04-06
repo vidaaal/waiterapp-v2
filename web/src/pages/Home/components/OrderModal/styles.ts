@@ -1,26 +1,6 @@
-import * as Dialog from '@radix-ui/react-dialog'
 import styled from 'styled-components'
 
-export const Overlay = styled(Dialog.Overlay)`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  inset: 0;
-  background: ${({ theme }) => `${theme.colors.black}cc`};
-`
-
-export const Container = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  inset: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
-export const Content = styled(Dialog.Content)`
+export const Content = styled.div`
   background: ${({ theme }) => theme.colors.white};
   width: 480px;
   border-radius: 8px;
@@ -37,6 +17,7 @@ export const Content = styled(Dialog.Content)`
 
     button {
       all: unset;
+      cursor: pointer;
       line-height: 0;
 
       svg {

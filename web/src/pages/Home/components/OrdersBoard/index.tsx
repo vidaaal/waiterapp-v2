@@ -26,7 +26,7 @@ export function OrdersBoard({ icon, title, orders }: OrdersBoardProps) {
       <header>
         <figure>{icon}</figure>
         <strong>{title}</strong>
-        <span>2</span>
+        <span>{orders.length}</span>
       </header>
 
       {orders.length > 0 && (
@@ -37,8 +37,11 @@ export function OrdersBoard({ icon, title, orders }: OrdersBoardProps) {
                 onClick={() => handleOpenOrderModal(order)}
                 key={order.id}
               >
-                <strong>Mesa 12</strong>
-                <span>13 itens</span>
+                <strong>Mesa {order.table}</strong>
+                <span>
+                  {order.products.length}
+                  {order.products.length === 1 ? ' item' : ' itens'}
+                </span>
               </button>
             )
           })}
