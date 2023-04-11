@@ -129,7 +129,7 @@ export function Home() {
 
           <OrdersBoard
             icon="👩‍🍳"
-            title="Fila de espera"
+            title="Em preparação"
             orders={inProductionOrders}
           />
 
