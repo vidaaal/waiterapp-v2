@@ -29,12 +29,12 @@ model User {
 }
 
 model Ingredient {
-  id        String   @id @default(uuid())
-  name      String
-  icon      String
-  
-  Product   Product? @relation(fields: [productId], references: [id])
-  productId String?
+  id   String @id @default(uuid())
+  name String
+  icon String
+
+  product    Product? @relation(fields: [product_id], references: [id])
+  product_id String?
 
   @@map("ingredients")
 }
@@ -44,7 +44,7 @@ model Category {
   name String
   icon String
 
-  Product Product[]
+  products Product[]
 
   @@map("categories")
 }
@@ -61,7 +61,7 @@ model Product {
   category    Category @relation(fields: [category_id], references: [id])
   category_id String
 
-  OrderProducts OrderProducts[]
+  orderProducts OrderProducts[]
 
   @@map("products")
 }
@@ -72,7 +72,7 @@ model OrderProducts {
   quantity   Int
   product_id String
 
-  Order    Order  @relation(fields: [order_id], references: [id])
+  order    Order  @relation(fields: [order_id], references: [id])
   order_id String
 }
 
