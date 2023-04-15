@@ -4,6 +4,7 @@ import cors from 'cors'
 import express, { NextFunction, Request, Response } from 'express'
 import { router } from './routes'
 import { ZodError } from 'zod'
+import { AppError } from './errors/AppError'
 
 const app = express()
 
@@ -17,6 +18,12 @@ app.use(
       return response
         .status(400)
         .json({ message: 'Validation error.', issues: error.format() })
+    }
+
+    if (error instanceof AppError) {
+      return response
+        .status(error.statusCode)
+        .json({ status: 'error', message: error.message })
     }
 
     console.log(error)

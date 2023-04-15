@@ -3,12 +3,12 @@ import { ListAllOrdersUseCase } from '@/use-cases/orders/list-all-orders-use-cas
 import { Request, Response } from 'express'
 
 export class ListAllOrdersController {
-  async handle(request: Request, response: Response) {
-    const createOrderUseCase = new ListAllOrdersUseCase(
+  async handle(request: Request, response: Response): Promise<Response> {
+    const listAllOrdersUseCase = new ListAllOrdersUseCase(
       new PrismaOrdersRepository(),
     )
 
-    const orders = await createOrderUseCase.execute()
+    const { orders } = await listAllOrdersUseCase.execute()
 
     return response.json(orders)
   }
