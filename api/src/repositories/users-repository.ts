@@ -4,4 +4,5 @@ import { User } from '@prisma/client'
 export interface UsersRepository {
   create: (data: CreateUserDTO) => Promise<User>
   findByEmail: (email: string) => Promise<User | null>
+  findMany: () => Promise<User[]>
 }
