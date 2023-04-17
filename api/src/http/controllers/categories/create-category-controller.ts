@@ -12,11 +12,11 @@ export class CreateCategoryController {
 
     const { name, icon } = createCategoryBodySchema.parse(request.body)
 
-    const createCategoryCase = new CreateCategoryUseCase(
+    const createCategoryUseCase = new CreateCategoryUseCase(
       new PrismaCategoriesRepository(),
     )
 
-    const { category } = await createCategoryCase.execute({
+    const { category } = await createCategoryUseCase.execute({
       name,
       icon,
     })

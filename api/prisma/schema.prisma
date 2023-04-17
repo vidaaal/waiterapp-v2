@@ -33,8 +33,7 @@ model Ingredient {
   name String
   icon String
 
-  product    Product? @relation(fields: [product_id], references: [id])
-  product_id String?
+  products Product[]
 
   @@map("ingredients")
 }
