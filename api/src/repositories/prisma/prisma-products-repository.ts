@@ -30,4 +30,10 @@ export class PrismaProductsRepository implements ProductsRepository {
 
     return product
   }
+
+  async findMany() {
+    const products = await prisma.product.findMany()
+
+    return products
+  }
 }

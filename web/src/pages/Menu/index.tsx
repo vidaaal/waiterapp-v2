@@ -5,6 +5,8 @@ import { useProducts } from '../../services/hooks/useProducts'
 export function Menu() {
   const { data } = useProducts()
 
+  console.log(data)
+
   return (
     <>
       <Header
