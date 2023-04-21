@@ -35,8 +35,8 @@ export function Orders() {
                   <Funnel size={20} />
                 </button>
               </Th>
-              <Th width={320}>Nome</Th>
-              <Th>Categoria</Th>
+              <Th>Nome</Th>
+              <Th width={240}>Categoria</Th>
               <Th width={240}>Total</Th>
               <Th width={80}>Ações</Th>
               <Th width={80}></Th>

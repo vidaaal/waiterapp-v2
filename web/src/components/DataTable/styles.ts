@@ -5,6 +5,7 @@ export const Table = styled.table`
   border-radius: 8px;
   border: 1px solid ${({ theme }) => `${theme.colors.gray[200]}cc`};
   color: ${({ theme }) => theme.colors.gray[500]};
+  width: 100%;
 
   thead {
     background: ${({ theme }) => `${theme.colors.gray[200]}33`};
