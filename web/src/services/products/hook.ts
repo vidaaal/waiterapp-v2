@@ -3,5 +3,5 @@ import { Product } from '../../types/Product'
 import { productsService } from './service'
 
 export function useProducts() {
-  return useQuery<Product[]>(['products'], productsService.listProducts)
+  return useQuery<Product[]>(['products'], productsService.listAll)
 }

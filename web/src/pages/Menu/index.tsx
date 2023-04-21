@@ -3,12 +3,14 @@ import { Button } from '../../components/Button'
 import { DataTable, Td, Th } from '../../components/DataTable'
 import { Header } from '../../components/Header'
 import { SectionHeader } from '../../components/SectionHeader'
+import { useCategories } from '../../services/categories/hook'
 import { useProducts } from '../../services/products/hook'
 import { formatCurrency } from '../../utils/formatCurrency'
 import { Container, TabContent, TabsHeader, TabTrigger } from './styles'
 
 export function Menu() {
   const { data: products } = useProducts()
+  const { data: categories } = useCategories()
 
   return (
     <>
@@ -51,7 +53,9 @@ export function Menu() {
                       <img src={product.imagePath} alt={product.name} />
                     </Td>
                     <Td>{product.name}</Td>
-                    <Td>{product.category_id}</Td>
+                    <Td>
+                      {product.category.icon} {product.category.name}
+                    </Td>
                     <Td>{formatCurrency(product.price)}</Td>
                     <Td>
                       <button>
@@ -89,21 +93,25 @@ export function Menu() {
             </thead>
 
             <tbody>
-              <tr>
-                <Td>123</Td>
-                <Td>Frango com Catupiry, Quatro Queijos</Td>
-                <Td>
-                  <button>
-                    <Eye size={24} />
-                  </button>
-                </Td>
+              {categories?.map((category) => {
+                return (
+                  <tr key={category.id}>
+                    <Td>{category.icon}</Td>
+                    <Td>{category.name}</Td>
+                    <Td>
+                      <button>
+                        <Eye size={24} />
+                      </button>
+                    </Td>
 
-                <Td>
-                  <button className="danger">
-                    <Trash size={24} />
-                  </button>
-                </Td>
-              </tr>
+                    <Td>
+                      <button className="danger">
+                        <Trash size={24} />
+                      </button>
+                    </Td>
+                  </tr>
+                )
+              })}
             </tbody>
           </DataTable>
         </TabContent>

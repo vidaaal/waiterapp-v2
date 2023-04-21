@@ -1,7 +1,7 @@
 import { api } from '../../lib/axios'
 
 class ProductsService {
-  async listProducts() {
+  async listAll() {
     const response = await api.get('/products')
 
     return response.data
