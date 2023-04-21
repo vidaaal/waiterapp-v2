@@ -68,5 +68,12 @@ export const StyledTd = styled.td<TdProps>`
     }
   }
 
+  img {
+    width: 48px;
+    height: 32px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+
   width: ${({ width }) => (width ? `${width}px` : 'auto')};
 `
