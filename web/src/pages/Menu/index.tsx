@@ -1,7 +1,10 @@
 import { Scroll } from 'phosphor-react'
 import { Header } from '../../components/Header'
+import { useProducts } from '../../services/hooks/useProducts'
 
 export function Menu() {
+  const { data } = useProducts()
+
   return (
     <>
       <Header
