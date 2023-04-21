@@ -18,11 +18,7 @@ export class PrismaOrdersRepository implements OrdersRepository {
       },
 
       include: {
-        products: {
-          include: {
-            product: true,
-          },
-        },
+        products: true,
       },
     })
 
