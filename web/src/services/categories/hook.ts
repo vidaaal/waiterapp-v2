@@ -3,5 +3,7 @@ import { Category } from '../../types/Category'
 import { categoriesService } from './service'
 
 export function useCategories() {
-  return useQuery<Category[]>(['categories'], categoriesService.listAll)
+  return useQuery<Category[]>(['categories'], categoriesService.listAll, {
+    initialData: [],
+  })
 }

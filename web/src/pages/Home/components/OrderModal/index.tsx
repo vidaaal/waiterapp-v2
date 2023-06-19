@@ -29,9 +29,7 @@ export function OrderModal({ order, isOpen, onOpenChange }: OrderModalProps) {
           <strong>Mesa 2</strong>
 
           <Dialog.Close>
-            <button type="button">
-              <X size={24} />
-            </button>
+            <X size={24} />
           </Dialog.Close>
         </header>
 
